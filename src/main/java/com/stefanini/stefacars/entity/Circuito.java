@@ -2,6 +2,8 @@ package com.stefanini.stefacars.entity;
 
 import javax.persistence.*;
 
+import com.stefanini.stefacars.dto.CircuitoDTO;
+
 @Entity
 @Table(name = "tb_circuito")
 public class Circuito {
@@ -27,6 +29,14 @@ public class Circuito {
     private String foto;
 
     public Circuito() {
+    }
+    public Circuito(CircuitoDTO circuitoDTO) {
+    this.id = circuitoDTO.getId();
+    this.nome = circuitoDTO.getNome();
+    this.percurso=circuitoDTO.getPercurso();
+    this.voltas = circuitoDTO.getVoltas();
+    this.curvas = circuitoDTO.getCurvas();
+    this.foto = circuitoDTO.getFoto();
     }
 
     public Long getId() {

@@ -64,6 +64,7 @@ public JogadorDTO login(LoginDTO login){
         nativQuery.setParameter(2,login.getSenha());
         jogador =(Jogador) nativQuery.getResultList().get(0);
         return new JogadorDTO();
+        
     }
     catch (Exception erro) {
         throw new RuntimeException("Login ou Senha incorretos!");
