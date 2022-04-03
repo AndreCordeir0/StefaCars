@@ -1,12 +1,16 @@
 package com.stefanini.stefacars.service;
 
+import com.stefanini.stefacars.dto.JogadorDTO;
+import com.stefanini.stefacars.dto.LoginDTO;
 import com.stefanini.stefacars.entity.Jogador;
 import com.stefanini.stefacars.repository.JogadorRepository;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.Objects;
 
+@ApplicationScoped
 public class JogadorService {
 
     @Inject
@@ -46,5 +50,10 @@ public class JogadorService {
 
     public List<Jogador> listarTodos() {
         return jogadorRepository.listAll();
+    }
+
+    public JogadorDTO login(LoginDTO login){
+        login.getSenha();
+    return jogadorRepository.login(login);
     }
 }

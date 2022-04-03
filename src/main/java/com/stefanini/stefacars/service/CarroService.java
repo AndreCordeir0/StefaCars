@@ -3,11 +3,12 @@ package com.stefanini.stefacars.service;
 import com.stefanini.stefacars.entity.Carro;
 import com.stefanini.stefacars.repository.CarroRepository;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.Objects;
 
-
+@ApplicationScoped
 public class CarroService {
 
     @Inject

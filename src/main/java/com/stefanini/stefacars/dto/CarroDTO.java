@@ -1,5 +1,7 @@
 package com.stefanini.stefacars.dto;
 
+import com.stefanini.stefacars.entity.Carro;
+
 public class CarroDTO {
 
     private Long id;
@@ -23,16 +25,16 @@ public class CarroDTO {
     public CarroDTO() {
     }
 
-    public CarroDTO(Long id, String nome, Long preco, Long velocidade, Long torque, Long aceleracao, Long drift, Long controle, String foto) {
-        this.id = id;
-        this.nome = nome;
-        this.preco = preco;
-        this.velocidade = velocidade;
-        this.torque = torque;
-        this.aceleracao = aceleracao;
-        this.drift = drift;
-        this.controle = controle;
-        this.foto = foto;
+    public CarroDTO(Carro carro) {
+        this.id = carro.getId();
+        this.nome = carro.getNome();
+        this.preco = carro.getPreco();
+        this.velocidade = carro.getVelocidade();
+        this.torque = carro.getTorque();
+        this.aceleracao = carro.getAceleracao();
+        this.drift = carro.getDrift();
+        this.controle = carro.getControle();
+        this.foto = carro.getFoto();
     }
 
     public Long getId() {
