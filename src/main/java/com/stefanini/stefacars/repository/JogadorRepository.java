@@ -56,14 +56,14 @@ public void excluirJogador(Long id){
 }
 
 
-public JogadorDTO login(LoginDTO login){
+public JogadorDTO login(JogadorDTO login){
     Jogador jogador = null;
     try{
-        Query nativQuery = this.createNativeQuery("SELECT * FROM tb_jogadores WHERE login ?");
-        nativQuery.setParameter(1,login.getLogin());
+        Query nativQuery = this.createNativeQuery("SELECT * FROM tb_jogador WHERE nickname = ? and senha = ? ");
+        nativQuery.setParameter(1,login.getNickname());
         nativQuery.setParameter(2,login.getSenha());
         jogador =(Jogador) nativQuery.getResultList().get(0);
-        return new JogadorDTO();
+        return new JogadorDTO(jogador);
         
     }
     catch (Exception erro) {

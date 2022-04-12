@@ -3,6 +3,7 @@ package com.stefanini.stefacars.resources;
 import com.stefanini.stefacars.dto.LoginDTO;
 import com.stefanini.stefacars.entity.Jogador;
 import com.stefanini.stefacars.service.JogadorService;
+import com.stefanini.stefacars.dto.JogadorDTO;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -52,9 +53,10 @@ public class JogadorResource {
         return Response.status(Response.Status.NO_CONTENT).build();
     }
 
-@POST
-@Path("/login")
-public Response login(@Valid @NotNull LoginDTO login){
-    return Response.status(Response.Status.ACCEPTED).build();
+    @POST
+    @Path("/login")
+    public Response login(@Valid @NotNull JogadorDTO jogador){
+        jogadorService.login(jogador);
+        return Response.status(Response.Status.ACCEPTED).build();
 }
 }

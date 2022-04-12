@@ -21,7 +21,7 @@ public Response listarCircuito(){
 }
 
 @GET
-@Path("/id")
+@Path("/{id}")
 public Response listarCircuitoPorId(@PathParam("id") Long id){
 return Response.status(Response.Status.OK).entity(circuitoService.pegarCircuitoPorID(id)).build();
 }

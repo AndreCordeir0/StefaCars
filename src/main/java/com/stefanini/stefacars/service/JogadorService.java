@@ -52,8 +52,7 @@ public class JogadorService {
         return jogadorRepository.listAll();
     }
 
-    public JogadorDTO login(LoginDTO login){
-        login.getSenha();
-    return jogadorRepository.login(login);
+    public JogadorDTO login(JogadorDTO login){
+        return jogadorRepository.login(login);
     }
 }

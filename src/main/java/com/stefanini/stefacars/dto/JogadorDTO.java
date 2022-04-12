@@ -1,7 +1,7 @@
 package com.stefanini.stefacars.dto;
 
 import javax.validation.constraints.Size;
-
+import javax.validation.constraints.NotEmpty;
 import com.stefanini.stefacars.entity.Carro;
 import com.stefanini.stefacars.entity.Jogador;
 
@@ -11,9 +11,12 @@ public class JogadorDTO {
 
     private Long id;
 
+    @Size(min = 5,max = 20, message = "Tamanho do login deve ser entre 5 e 20!")
+    @NotEmpty(message = "Login não pode ser vazio!")
     private String nickname;
 
-    @Size(min = 4,max = 10)
+    @Size(min = 4,max = 10,message = "Tamanho da Senha deve ser entre 4 e 10!")
+    @NotEmpty(message = "Senha não pode ser vazio!")
     private String senha;
 
     private int saldo = 100;
